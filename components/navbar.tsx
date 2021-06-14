@@ -10,7 +10,7 @@ function nav() {
   }
 
   return (
-    <nav className="p-4 w-full bg-blue-400 fixed">
+    <nav className="p-4 w-full bg-blue-400 fixed z-50">
       <button
         className="w-11 h-11 flex items-center justify-center"
         onClick={toggleSideviewVisible}

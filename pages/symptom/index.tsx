@@ -1,5 +1,5 @@
-function index() {
-  return <div>diagnosis card</div>;
+function symptom() {
+  return <div>symptom</div>;
 }
 
-export default index;
+export default symptom;

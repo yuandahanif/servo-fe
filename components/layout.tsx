@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Navbar from "./navbar";
+import Head from 'next/head'
+import Navbar from './navbar'
 
 interface Props {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 function layout({ children }: Props) {
@@ -15,18 +15,22 @@ function layout({ children }: Props) {
       </Head>
 
       <Navbar />
-      <main className="w-full bg-red-400 min-h-screen">{children}</main>
-      <footer className="">
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <span className="">AAA</span>
-        </a>
-      </footer>
+      <div className="min-h-screen w-full flex flex-col">
+        <main className="flex-grow w-full min-h-full bg-red-400 p-2 sm:p-8 pt-20 sm:pt-28">
+          {children}
+        </main>
+        <footer className="">
+          <a
+            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by <span className="">AAA</span>
+          </a>
+        </footer>
+      </div>
     </>
-  );
+  )
 }
 
-export default layout;
+export default layout
