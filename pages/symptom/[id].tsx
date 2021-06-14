@@ -40,6 +40,24 @@ export default function Home() {
     })
   }
 
+  const redirectToConfirmPage = (event: MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    const selectedSymthoms: number[] | null = []
+    sympthomChecked.filter((s, i) => {
+      if (s) {
+        console.log('file: [id].tsx ~ line 46 ~ selectedSymthoms ~  i', i)
+        selectedSymthoms.push(i)
+      }
+    })
+
+    router.push({
+      pathname: '/confirm',
+      query: {
+        sympthoms: selectedSymthoms,
+      },
+    })
+  }
+
   return (
     <Layout>
       <Head>
@@ -50,7 +68,8 @@ export default function Home() {
       <div className="py-2 flex flex-col items-center relative">
         <h1 className="prose prose-2xl font-bold">Pilih Gejala</h1>
         <span className="mb-3 mt-4">
-          Mesin <span className="bg-green-200 p-1 rounded-md">{id}</span> Siap digunakan!
+          Mesin <span className="bg-green-200 p-1 rounded-md">{id}</span> Siap
+          digunakan!
         </span>
         <span className="mb-3">Silahkan pilih gejala:</span>
 
@@ -88,7 +107,7 @@ export default function Home() {
             <div className="right-section">{symptomCount}</div>
           </div>
           <button
-            onClick={() => {}}
+            onClick={redirectToConfirmPage}
             className="p-4 bg-blue-400 rounded-md text-white text-base font-semibold"
           >
             Konfirmasi pilihan
