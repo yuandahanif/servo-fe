@@ -27,7 +27,7 @@ export default function Confirm() {
     event.preventDefault()
 
     router.push({
-      pathname: '/confirm',
+      pathname: '/medicine',
       query: {
         sympthoms: [],
       },
